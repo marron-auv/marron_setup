@@ -1,0 +1,5 @@
+repositories:
+  marron_driver:
+    type: git
+    url: https://github.com/marron-auv/marron_driver.git
+    version: master
