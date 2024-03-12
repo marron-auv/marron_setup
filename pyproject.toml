@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "marron-setup"
+version = "0.0.1"
+description = ""
+authors = ["Masaya Kataoka <ms.kataoka@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+ansible = "^9.3.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

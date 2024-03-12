@@ -1,0 +1,5 @@
+---
+- name: Setup marron
+  hosts: marron
+  roles: 
+    - devices
