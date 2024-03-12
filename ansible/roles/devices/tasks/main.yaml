@@ -25,4 +25,4 @@
   shell: docker pull hakuturu583/marron:latest
 
 - name: Start docker container
-  shell: docker run -it --name marron --restart always --net=host hakuturu583/marron:latest
+  shell: docker run -it --name marron --restart always --net=host hakuturu583/marron:latest ros2 launch marron_driver driver.launch.xml
