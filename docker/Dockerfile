@@ -15,8 +15,12 @@ RUN vcs import . < workspace.repos
 WORKDIR ../
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive \
-    apt-get install -y \
     rosdep install -iry --from-paths src && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
-RUN colcon build --symlink-install
+RUN source /opt/ros/humble/setup.bash && colcon build --symlink-install
+
+ADD entrypoint.sh /
+RUN chmod +x /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
