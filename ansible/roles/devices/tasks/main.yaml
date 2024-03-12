@@ -9,3 +9,20 @@
 - name: Update udev rule
   become: true
   shell: udevadm trigger
+
+- name: Append the group 'docker' to the user's groups
+  become: true
+  ansible.builtin.user:
+    name: "{{ ansible_user }}"
+    groups: [docker]
+    append: yes
+
+- name: Restart docker
+  become: true
+  shell: service docker restart
+
+- name: Pull docker image
+  shell: docker pull hakuturu583/marron:latest
+
+- name: Start docker container
+  shell: docker run -it --name marron --restart always --net=host hakuturu583/marron:latest
