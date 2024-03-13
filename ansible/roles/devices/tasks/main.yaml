@@ -8,4 +8,4 @@
 
 - name: Update udev rule
   become: true
-  shell: udevadm control --reload-rules
+  shell: udevadm trigger

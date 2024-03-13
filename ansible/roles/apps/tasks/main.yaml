@@ -17,11 +17,11 @@
 - name: Pull docker image
   shell: docker pull hakuturu583/marron:latest
 
-- name: Start docker container
-  shell:
-    cmd: >
-      docker run -d --name marron --restart always --net=host
-      --device=/dev/motor_teensy:/dev/motor_teensy
-      --device=/dev/imu:/dev/imu
-      hakuturu583/marron:latest
-      ros2 launch marron_driver driver.launch.xml
+# - name: Start docker container
+#   shell:
+#     cmd: >
+#       docker run -d --name marron --restart always --net=host
+#       --device=/dev/motor_teensy:/dev/motor_teensy
+#       --device=/dev/imu:/dev/imu
+#       hakuturu583/marron:latest
+#       ros2 launch marron_driver driver.launch.xml
