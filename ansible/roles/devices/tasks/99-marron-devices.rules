@@ -1,2 +1,7 @@
-SUBSYSTEM=="usb", ATTR{idVendor}=="16c0", ATTR{idProduct}=="0483", MODE="666", GROUP="usb", SYMLINK+="motor_teensy"
+SUBSYSTEM=="tty", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="0483", ATTRS{serial}=="6374040", MODE="0666", SYMLINK+="motor"
+
+SUBSYSTEM=="tty", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="0483", ATTRS{serial}=="13914620", MODE="0666", SYMLINK+="depth_sensor"
+
 SUBSYSTEM=="tty", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", ATTRS{serial}=="FTKVMQ8N", MODE="666", SYMLINK+="imu", GROUP="dialout"
+
+SUBSYSTEMS=="usb", ENV{DEVTYPE}=="usb_device", ATTRS{idVendor}=="413c", ATTRS{idProduct}=="c015", ATTRS{serial}=="C04BDB1C8590", MODE="0666", SYMLINK+="front_camera"
